@@ -49,6 +49,8 @@ The prospective flagship case in the paper was analyzed **before** the official 
 
 All artifacts carry the original `ts`/`timestamp` fields from the moment of collection. Deployment variant was **not** pre-asserted; the family and version-line inferences were confirmed by the reveal.
 
+All of the above files — catalog snapshot, fingerprint database, probe JSONL, and the S1–S4 supplementary documents — are archived unchanged at [Zenodo (DOI: 10.5281/zenodo.22210928)](https://doi.org/10.5281/zenodo.22210928), where the file timestamps and contents can be verified independently.
+
 ## Methodological notes
 
 - The mandatory **cross-length condition** (paper §3.3) is enforced by the `run` component: it refuses to emit a same-tokenizer verdict from short-prompt probes alone (short-prompt collisions are documented as false positives under a short-only rule).
