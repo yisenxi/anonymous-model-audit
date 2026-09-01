@@ -1,0 +1,2 @@
+# 无第三方依赖（纯 stdlib：urllib/json/ssl）
+# audit-tool 零依赖运行；Python 3.8+
