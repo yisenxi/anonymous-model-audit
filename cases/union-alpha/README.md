@@ -1,5 +1,7 @@
 # Union Alpha: tokenizer fingerprint, before the reveal
 
+Published as a thread on X on 2026-09-17, before any official confirmation: https://x.com/yisenxi2026/status/2100457858345431099
+
 Model: `stealth/union-alpha`, a free stealth listing on OpenRouter from 2026-09-16 (also served on OpenCode Go as `union-alpha`).
 Method: the four-stage protocol from *Auditing Anonymous AI Models* (arXiv:2608.31142).
 Prediction written 2026-09-17, before any official confirmation.
