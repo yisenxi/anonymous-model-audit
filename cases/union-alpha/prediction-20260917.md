@@ -176,7 +176,7 @@ Go 端点（`zen/go/v1/messages`, Anthropic 格式）对照同一批探针：
 | 层 | 结论 | 置信度 | 依据 |
 |---|---|---|---|
 | tokenizer 家族 | Qwen（阿里）系 | high | 6 个 Qwen 模型 × 9 探针（含跨字符集）全部恒定；家族内自洽；排除 GLM/Mistral/Kimi/MiniMax/DeepSeek |
-| 具体变体/版本 | not pre-asserted |，| union 无 reasoning，与已知 Qwen max(reasoning) 系不同；可能是未发布的 non-reasoning 变体，或基于 Qwen tokenizer 的第三方模型 |
+| 具体变体/版本 | not pre-asserted | 未断言 | union 无 reasoning，与已知 Qwen max(reasoning) 系不同；可能是未发布的 non-reasoning 变体，或基于 Qwen tokenizer 的第三方模型 |
 | system prompt 长度 | 比 qwen3.7 短 11 token、比 qwen3.8 短 62 token | medium | 差分分解 |
 
 ### 与社区假说的分歧（本预测的独立价值）
