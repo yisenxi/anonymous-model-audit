@@ -1,0 +1,14 @@
+{"ts": "20260917-103350", "model": "qwen/qwen3.8-max-0902", "label": "默认", "probe": "identity_zh", "union": 11, "diff": -62, "ptok": 73, "rtok": 200, "ctok": 200, "content": ""}
+{"ts": "20260917-103350", "model": "qwen/qwen3.8-max-0902", "label": "默认", "probe": "identity_en", "union": 15, "diff": -62, "ptok": 77, "rtok": 69, "ctok": 90, "content": "I am Qwen, a large language model developed by Alibaba Group’s Tongyi Lab."}
+{"ts": "20260917-103350", "model": "qwen/qwen3.8-max-0902", "label": "默认", "probe": "cutoff", "union": 9, "diff": -62, "ptok": 71, "rtok": 197, "ctok": 199, "content": ""}
+{"ts": "20260917-103350", "model": "qwen/qwen3.8-max-0902", "label": "默认", "probe": "long_zh", "union": 22, "diff": -62, "ptok": 84, "rtok": 200, "ctok": 200, "content": ""}
+{"ts": "20260917-103350", "model": "qwen/qwen3.8-max-0902", "label": "默认", "probe": "long_en", "union": 19, "diff": -62, "ptok": 81, "rtok": 200, "ctok": 200, "content": ""}
+{"ts": "20260917-103350", "model": "qwen/qwen3.8-max-0902", "label": "默认", "probe": "self_insist", "ptok": 76, "rtok": 111, "ctok": 161, "content": "我是通义千问（Qwen），由阿里巴巴集团通义实验室自主研发的大语言模型。我的主要能力涵盖语言理解、逻辑推理、代码生成和多轮对话等。如果你有其他问题，我很乐意提供帮助！ 😊"}
+{"ts": "20260917-103350", "model": "qwen/qwen3.8-max-0902", "label": "默认", "probe": "reasoning_style", "ptok": 80, "rtok": 77, "ctok": 239, "content": "\\[\n23 \\times 47\n\\]\n\nBreak \\(47\\) into \\(40 + 7\\):\n\n\\[\n23 \\times 47 = 23 \\times (40 + 7)\n\\]\n\nDistribute:\n\n\\[\n= (23 \\times 40) + (23 \\times 7)\n\\]\n\nCalculate each part:\n\n\\[\n23 \\times 40 = 920\n\\]\n\n\\[\n23 \\"}
+{"ts": "20260917-103350", "model": "qwen/qwen3.8-max-0902", "label": "关推理(enabled=false)", "probe": "identity_zh", "union": 11, "diff": null, "err": "HTTP400"}
+{"ts": "20260917-103350", "model": "qwen/qwen3.8-max-0902", "label": "关推理(enabled=false)", "probe": "identity_en", "union": 15, "diff": null, "err": "HTTP400"}
+{"ts": "20260917-103350", "model": "qwen/qwen3.8-max-0902", "label": "关推理(enabled=false)", "probe": "cutoff", "union": 9, "diff": null, "err": "HTTP400"}
+{"ts": "20260917-103350", "model": "qwen/qwen3.8-max-0902", "label": "关推理(enabled=false)", "probe": "long_zh", "union": 22, "diff": null, "err": "HTTP400"}
+{"ts": "20260917-103350", "model": "qwen/qwen3.8-max-0902", "label": "关推理(enabled=false)", "probe": "long_en", "union": 19, "diff": null, "err": "HTTP400"}
+{"ts": "20260917-103350", "model": "qwen/qwen3.8-max-0902", "label": "关推理(enabled=false)", "probe": "self_insist", "err": "HTTP400"}
+{"ts": "20260917-103350", "model": "qwen/qwen3.8-max-0902", "label": "关推理(enabled=false)", "probe": "reasoning_style", "err": "HTTP400"}

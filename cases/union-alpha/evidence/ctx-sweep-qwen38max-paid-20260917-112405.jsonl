@@ -1,0 +1,7 @@
+{"ts": "20260917-112405", "label": "0.3M字符", "chars": 300024, "model": "qwen/qwen3.8-max-0902", "err": "TypeError: 'NoneType' object is not subscriptable"}
+{"ts": "20260917-112405", "label": "0.8M字符", "chars": 800024, "model": "qwen/qwen3.8-max-0902", "err": "TypeError: 'NoneType' object is not subscriptable"}
+{"ts": "20260917-112405", "label": "1.4M字符", "chars": 1400024, "model": "qwen/qwen3.8-max-0902", "err": "TypeError: 'NoneType' object is not subscriptable"}
+{"ts": "20260917-112405", "label": "2.0M字符", "chars": 2000024, "model": "qwen/qwen3.8-max-0902", "err": "TypeError: 'NoneType' object is not subscriptable"}
+{"ts": "20260917-112405", "label": "3.0M字符", "chars": 3000024, "model": "qwen/qwen3.8-max-0902", "err": "TypeError: 'NoneType' object is not subscriptable"}
+{"ts": "20260917-112405", "label": "3.9M字符", "chars": 3900024, "model": "qwen/qwen3.8-max-0902", "err": "TypeError: 'NoneType' object is not subscriptable"}
+{"ts": "20260917-112405", "label": "4.2M字符", "chars": 4200024, "model": "qwen/qwen3.8-max-0902", "err": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)>"}

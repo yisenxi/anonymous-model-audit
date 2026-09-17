@@ -1,0 +1,7 @@
+{"ts": "20260917-103928", "label": "16K tok", "target_chars": 64000, "actual_chars": 64024, "model": "stealth/union-alpha", "ptok": 10673, "ctok": 5, "content": "OK"}
+{"ts": "20260917-103928", "label": "64K tok", "target_chars": 256000, "actual_chars": 256024, "model": "stealth/union-alpha", "ptok": 42673, "ctok": 5, "content": "OK"}
+{"ts": "20260917-103928", "label": "128K tok", "target_chars": 512000, "actual_chars": 512024, "model": "stealth/union-alpha", "ptok": 85336, "ctok": 3, "content": "OK"}
+{"ts": "20260917-103928", "label": "200K tok", "target_chars": 800000, "actual_chars": 800024, "model": "stealth/union-alpha", "ptok": 133336, "ctok": 3, "content": "OK"}
+{"ts": "20260917-103928", "label": "250K tok", "target_chars": 1000000, "actual_chars": 1000024, "model": "stealth/union-alpha", "ptok": 166669, "ctok": 5, "content": "The user has sent a"}
+{"ts": "20260917-103928", "label": "262K tok", "target_chars": 1048576, "actual_chars": 1048600, "model": "stealth/union-alpha", "err": "HTTP400: {\"error\":{\"message\":\"This endpoint's maximum context length is 262144 tokens. However, you requested about 262156 tokens (262151 of text input, 5 in the output). Please reduce the "}
+{"ts": "20260917-103928", "label": "280K tok", "target_chars": 1120000, "actual_chars": 1120024, "model": "stealth/union-alpha", "err": "HTTP400: {\"error\":{\"message\":\"This endpoint's maximum context length is 262144 tokens. However, you requested about 280012 tokens (280007 of text input, 5 in the output). Please reduce the "}

@@ -1,0 +1,15 @@
+{"ts": "20260917-095916", "round": 0, "probe": "identity_zh", "model": "stealth/union-alpha", "ptok": 11}
+{"ts": "20260917-095916", "round": 0, "probe": "identity_en", "model": "stealth/union-alpha", "ptok": 15}
+{"ts": "20260917-095916", "round": 0, "probe": "cutoff", "model": "stealth/union-alpha", "ptok": 9}
+{"ts": "20260917-095916", "round": 0, "probe": "long_zh", "model": "stealth/union-alpha", "ptok": 22}
+{"ts": "20260917-095916", "round": 0, "probe": "long_en", "model": "stealth/union-alpha", "ptok": 19}
+{"ts": "20260917-095916", "round": 1, "probe": "identity_zh", "model": "stealth/union-alpha", "ptok": 11}
+{"ts": "20260917-095916", "round": 1, "probe": "identity_en", "model": "stealth/union-alpha", "ptok": 15}
+{"ts": "20260917-095916", "round": 1, "probe": "cutoff", "model": "stealth/union-alpha", "ptok": 30}
+{"ts": "20260917-095916", "round": 1, "probe": "long_zh", "model": "stealth/union-alpha", "ptok": 22}
+{"ts": "20260917-095916", "round": 1, "probe": "long_en", "model": "stealth/union-alpha", "ptok": 19}
+{"ts": "20260917-095916", "round": 2, "probe": "identity_zh", "model": "stealth/union-alpha", "ptok": 11}
+{"ts": "20260917-095916", "round": 2, "probe": "identity_en", "model": "stealth/union-alpha", "ptok": 15}
+{"ts": "20260917-095916", "round": 2, "probe": "cutoff", "model": "stealth/union-alpha", "ptok": 9}
+{"ts": "20260917-095916", "round": 2, "probe": "long_zh", "model": "stealth/union-alpha", "ptok": 22}
+{"ts": "20260917-095916", "round": 2, "probe": "long_en", "model": "stealth/union-alpha", "ptok": 19}

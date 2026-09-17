@@ -1,0 +1,4 @@
+{"ts": "20260917-095916", "model": "qwen/qwen3.8-max-0902", "identity_zh": 73, "identity_en": 77, "cutoff": 71, "long_zh": 84, "long_en": 81}
+{"ts": "20260917-095916", "model": "qwen/qwen3.8-flash", "identity_zh": 73, "identity_en": 77, "cutoff": 71, "long_zh": 84, "long_en": 81}
+{"ts": "20260917-095916", "model": "qwen/qwen3.7-max", "identity_zh": 22, "identity_en": 26, "cutoff": 20, "long_zh": 33, "long_en": 30}
+{"ts": "20260917-095916", "model": "qwen/qwen3.6-flash", "identity_zh": 22, "identity_en": 26, "cutoff": 20, "long_zh": 33, "long_en": 30}

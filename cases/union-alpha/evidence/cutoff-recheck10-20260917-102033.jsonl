@@ -1,0 +1,10 @@
+{"ts": "20260917-102033", "round": 0, "model": "stealth/union-alpha", "probe": "cutoff", "ptok": 9, "rtok": 0, "ctok": 51, "content": "2024年8月"}
+{"ts": "20260917-102033", "round": 1, "model": "stealth/union-alpha", "probe": "cutoff", "ptok": 9, "rtok": 0, "ctok": 39, "content": "2024年8月"}
+{"ts": "20260917-102033", "round": 2, "model": "stealth/union-alpha", "probe": "cutoff", "ptok": 9, "rtok": 0, "ctok": 36, "content": "2024年6月"}
+{"ts": "20260917-102033", "round": 3, "model": "stealth/union-alpha", "probe": "cutoff", "err": "FAIL"}
+{"ts": "20260917-102033", "round": 4, "model": "stealth/union-alpha", "probe": "cutoff", "ptok": 9, "rtok": 0, "ctok": 39, "content": "2024年6月"}
+{"ts": "20260917-102033", "round": 5, "model": "stealth/union-alpha", "probe": "cutoff", "err": "FAIL"}
+{"ts": "20260917-102033", "round": 6, "model": "stealth/union-alpha", "probe": "cutoff", "ptok": 9, "rtok": 0, "ctok": 39, "content": "2024年8月"}
+{"ts": "20260917-102033", "round": 7, "model": "stealth/union-alpha", "probe": "cutoff", "ptok": 9, "rtok": 0, "ctok": 35, "content": "2024年8月"}
+{"ts": "20260917-102033", "round": 8, "model": "stealth/union-alpha", "probe": "cutoff", "ptok": 9, "rtok": 0, "ctok": 40, "content": "2024年8月"}
+{"ts": "20260917-102033", "round": 9, "model": "stealth/union-alpha", "probe": "cutoff", "ptok": 9, "rtok": 0, "ctok": 68, "content": "2024年6月"}

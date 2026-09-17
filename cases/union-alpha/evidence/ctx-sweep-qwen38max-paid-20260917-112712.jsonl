@@ -1,0 +1,6 @@
+{"ts": "20260917-112712", "label": "0.3M", "model": "qwen/qwen3.8-max-0902", "elapsed_s": 4.6, "ok": true, "ptok": 50067, "provider": "Alibaba", "content": "", "chars": 300024}
+{"ts": "20260917-112712", "label": "0.8M", "model": "qwen/qwen3.8-max-0902", "elapsed_s": 10.6, "ok": true, "ptok": 133402, "provider": "Alibaba", "content": "", "chars": 800024}
+{"ts": "20260917-112712", "label": "1.4M", "model": "qwen/qwen3.8-max-0902", "elapsed_s": 34.4, "ok": true, "ptok": 233402, "provider": "Alibaba", "content": "", "chars": 1400024}
+{"ts": "20260917-112712", "label": "2.0M", "model": "qwen/qwen3.8-max-0902", "elapsed_s": 23.9, "ok": true, "ptok": 333402, "provider": "Alibaba", "content": "", "chars": 2000024}
+{"ts": "20260917-112712", "label": "3.0M", "model": "qwen/qwen3.8-max-0902", "elapsed_s": 39.5, "ok": true, "ptok": 500067, "provider": "Alibaba", "content": "", "chars": 3000024}
+{"ts": "20260917-112712", "label": "3.8M", "model": "qwen/qwen3.8-max-0902", "elapsed_s": 352.5, "ok": false, "err": "TimeoutError: The read operation timed out", "chars": 3800024}

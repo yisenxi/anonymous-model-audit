@@ -1,0 +1,4 @@
+{"ts": "20260917-113825", "label": "0.8M", "model": "qwen/qwen3.8-flash", "elapsed_s": 17.2, "ok": true, "ptok": 133402, "provider": "Alibaba", "chars": 800024}
+{"ts": "20260917-113825", "label": "1.4M", "model": "qwen/qwen3.8-flash", "elapsed_s": 16.9, "ok": true, "ptok": 233402, "provider": "Alibaba", "chars": 1400024}
+{"ts": "20260917-113825", "label": "2.0M", "model": "qwen/qwen3.8-flash", "elapsed_s": 33.4, "ok": true, "ptok": 333402, "provider": "Alibaba", "chars": 2000024}
+{"ts": "20260917-113825", "label": "3.0M", "model": "qwen/qwen3.8-flash", "elapsed_s": 20.9, "ok": true, "ptok": 500067, "provider": "Alibaba", "chars": 3000024}

@@ -51,6 +51,12 @@ All artifacts carry the original `ts`/`timestamp` fields from the moment of coll
 
 All of the above files — catalog snapshot, fingerprint database, probe JSONL, and the S1–S4 supplementary documents — are archived unchanged at [Zenodo (DOI: 10.5281/zenodo.22210928)](https://doi.org/10.5281/zenodo.22210928), where the file timestamps and contents can be verified independently.
 
+## Case files
+
+Pre-reveal measurement records, one directory per model. Each record is written before the official reveal and scored against it after.
+
+`cases/union-alpha/` covers Union Alpha, listed on OpenRouter and OpenCode Go on 2026-09-16. The call is Qwen for the tokenizer family, against the leading community guesses of Mistral and Zhipu; the record was written 2026-09-17, with no official confirmation available at the time. It also documents a one-token cross-platform gap for the same model id, a context-length control showing that the platform's admission check estimates tokens from character count rather than the real tokenizer, and the boundary that the competing MiMo V3 hypothesis cannot be tested until V3 is public.
+
 ## Methodological notes
 
 - The mandatory **cross-length condition** (paper §3.3) is enforced by the `run` component: it refuses to emit a same-tokenizer verdict from short-prompt probes alone (short-prompt collisions are documented as false positives under a short-only rule).

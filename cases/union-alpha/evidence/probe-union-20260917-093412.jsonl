@@ -1,0 +1,5 @@
+{"ts": "20260917-093412", "probe": "identity_zh", "model": "stealth/union-alpha", "ok": true, "ptok": 11, "content": "我是Union Alpha模型，由一家目前保持匿名的制造商开发。"}
+{"ts": "20260917-093412", "probe": "identity_en", "model": "stealth/union-alpha", "ok": true, "ptok": 15, "content": "I’m Union Alpha, and my developer is currently anonymous."}
+{"ts": "20260917-093412", "probe": "cutoff", "model": "stealth/union-alpha", "ok": true, "ptok": 9, "content": "2024年6月"}
+{"ts": "20260917-093412", "probe": "long_zh", "model": "stealth/union-alpha", "ok": true, "ptok": 22, "content": "你好，我是 Union Alpha，开发方目前匿名。我是一款通过 API 提供服务的 AI 助手，擅长中文交流、知识讲解、写作润色、翻译、编程辅助与逻辑分析，也能帮助整理资料、规划任务和比较方案。我的具体模型架构、参数规模及训练数据构成尚未公开，因此无法提供可靠细节。功能上，我能结合上下文理解需求，调整表达风格，并将复杂问题拆解说明。我的回答可能存在错误或信息过时，重要事实建议核实；也请避免分享密"}
+{"ts": "20260917-093412", "probe": "long_en", "model": "stealth/union-alpha", "ok": true, "ptok": 19, "content": "I’m **Union Alpha**, an AI language model whose maker is currently anonymous. I communicate through text, helping people explore ideas, solve problems, and turn rough thoughts into useful explanations"}

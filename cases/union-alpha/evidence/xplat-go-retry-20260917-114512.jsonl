@@ -1,0 +1,2 @@
+{"ts": "20260917-114512", "platform": "opencode-go", "model": "union-alpha", "probe": "identity_zh", "or_value": 11, "ok": false, "err": "HTTP401: {\"type\":\"error\",\"error\":{\"type\":\"AuthError\",\"message\":\"Missing API key.\"}}"}
+{"ts": "20260917-114512", "platform": "opencode-go", "model": "union-alpha", "probe": "identity_en", "or_value": 15, "ok": false, "err": "HTTP401: {\"type\":\"error\",\"error\":{\"type\":\"AuthError\",\"message\":\"Missing API key.\"}}"}
