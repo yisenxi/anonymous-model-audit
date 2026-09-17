@@ -5,7 +5,7 @@
 
 ---
 
-## Stage 0：时间一致性基线 
+## Stage 0：时间一致性基线
 
 - 归档快照：Internet Archive `20260916154548`（2026-09-16 15:45:48 UTC，上线当天），HTTP 200，CDX digest `LNDOWIONBTPWW5CD2D5OVTUIK3FQ6EM6`
 - 上线配置：ctx 262,144 / max_out 131,072 / Free / text+image→text / Released Sep 16, 2026
@@ -53,7 +53,7 @@ ctx 声明值可靠性说明：OpenRouter 的 `context_length` 是平台声明�
 | qwen3.7-max − qwen3.6-flash | 恒定 0 |
 | 3.8 系 − 3.7/3.6 系 | 恒定 51 |
 
-验算自洽：union = qwen3.8 − 62 = qwen3.7 − 11，62 − 11 = 51 
+验算自洽：union = qwen3.8 − 62 = qwen3.7 − 11，62 − 11 = 51
 → union 与 Qwen 3.6/3.7/3.8 三代共享同一 tokenizer（仅 system prompt 长度不同）。
 
 ### 稳定性（3 轮 + 10 轮复查）
@@ -161,7 +161,7 @@ Go 端点（`zen/go/v1/messages`, Anthropic 格式）对照同一批探针：
 | union-alpha | 262,144 | 262,144（上限确认）| Stealth（匿名标签）|
 | qwen3.8-flash | 1,000,000 | ≥500,067 | Alibaba |
 | qwen3.8-max | 1,000,000 | ≥500,067 | Alibaba |
-| qwen3.8-27b | 1,000,000（目录）| 未测 | provider 仅 262,144 声明不一致 |
+| qwen3.8-27b | 1,000,000（目录）| 未测 | provider 仅 262,144（声明不一致）|
 
 要点：
 1. flash 与 max 的 ptok 逐档完全相同（133,402/233,402/333,402/500,067）→ 同 tokenizer + 同配置（与 Δ0 一致）
@@ -191,20 +191,23 @@ Go 端点（`zen/go/v1/messages`, Anthropic 格式）对照同一批探针：
 3. `cutoff` 探针的偶发 ptok 抖动提示 union 侧存在轻度计数不稳定
 
 ## 揭晓评分标准
-- 揭晓 Qwen/阿里：tokenizer 家族层预测正确 
+- 揭晓 Qwen/阿里：tokenizer 家族层预测正确
 - 揭晓 Mistral/Zhipu/其他：预测错误，记录为"单一 provider 直转场景下 Stage 2 的失败案例"
 - 长期不揭晓：按协议归为 *cannot attribute 的持续性观察*（tokenizer 层结论仍独立成立）
 
 ## 证据文件
-- `evidence/probe-union-20260917-093412.jsonl`（基准 5 探针）
-- `evidence/catalog-union-20260917-093412.jsonl`（第一批 8 候选）
-- `evidence/catalog2-union-20260917-094547.jsonl`（第二批 9 候选）
-- `evidence/stability-union-20260917-095916.jsonl`（稳定性 3 轮）
-- `evidence/charset-union-20260917-095916.jsonl`（扩展字符集）
-- `evidence/qwen-cross-20260917-095916.jsonl`（Qwen 家族内交叉）
-- `evidence/cutoff-recheck-20260917-101122.jsonl`（cutoff 复查 6 轮）
-- `evidence/stage3-union-20260917-101122.jsonl`（行为探针）
-- `evidence/reasoning-switch-20260917-102033.jsonl`（reasoning 开关验证）
-- `evidence/cutoff-recheck10-20260917-102033.jsonl`（cutoff 10 轮复查）
-- `evidence/qwen38flash-noreason-20260917-102859.jsonl`（关推理对照）
-- `evidence/stage0-stage1-20260917.md`（Stage 0/1 记录）
+
+`evidence/` 下 20 个文件，每个以产生它的运行时间戳命名：
+
+- `probe-union-*`（基准 5 探针）
+- `catalog-union-*`、`catalog2-union-*`（候选批次）
+- `stability-union-*`（稳定性 3 轮）
+- `charset-union-*`（扩展字符集）
+- `qwen-cross-*`（Qwen 家族内交叉）
+- `cutoff-recheck*`（cutoff 复查 6 轮与 10 轮）
+- `stage3-union-*`（行为探针）
+- `reasoning-switch-*`（reasoning 开关验证）
+- `qwen38flash-noreason-*`、`qwen38max-noreason-*`（关推理对照）
+- `ctx-sweep-*`（ctx 阶梯：union、qwen3.8-flash、qwen3.8-max）
+- `xplat-go-*`（跨平台验证与重试）
+- `stage0-stage1-20260917.md`（Stage 0/1 记录）
