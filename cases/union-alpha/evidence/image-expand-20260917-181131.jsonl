@@ -1,0 +1,30 @@
+{"ts": "20260917-181131", "kind": "text_only", "arm": "union", "model": "stealth/union-alpha", "rep": 0, "reasoning": null, "img_bytes": 0, "ok": true, "ptok": 7, "rtok": 0}
+{"ts": "20260917-181131", "kind": "text_only", "arm": "union", "model": "stealth/union-alpha", "rep": 1, "reasoning": null, "img_bytes": 0, "ok": true, "ptok": 25, "rtok": 0}
+{"ts": "20260917-181131", "kind": "text_only", "arm": "glm", "model": "z-ai/glm-5.3-flash", "rep": 0, "reasoning": null, "img_bytes": 0, "ok": true, "ptok": 20, "rtok": 2}
+{"ts": "20260917-181131", "kind": "text_only", "arm": "q38max", "model": "qwen/qwen3.8-max-0902", "rep": 0, "reasoning": null, "img_bytes": 0, "ok": true, "ptok": 69, "rtok": 6}
+{"ts": "20260917-181131", "kind": "text_only", "arm": "q38flash", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": null, "img_bytes": 0, "ok": true, "ptok": 69, "rtok": 6}
+{"ts": "20260917-181131", "kind": "text_only", "arm": "q38flash_off", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": "{\"enabled\": false}", "img_bytes": 0, "ok": true, "ptok": 33, "rtok": 0}
+{"ts": "20260917-181131", "kind": "im_solid64", "arm": "union", "model": "stealth/union-alpha", "rep": 0, "reasoning": null, "img_bytes": 178, "ok": true, "ptok": 21, "rtok": 0}
+{"ts": "20260917-181131", "kind": "im_solid64", "arm": "union", "model": "stealth/union-alpha", "rep": 1, "reasoning": null, "img_bytes": 178, "ok": true, "ptok": 21, "rtok": 0}
+{"ts": "20260917-181131", "kind": "im_solid64", "arm": "glm", "model": "z-ai/glm-5.3-flash", "rep": 0, "reasoning": null, "img_bytes": 178, "ok": true, "ptok": 38, "rtok": 6}
+{"ts": "20260917-181131", "kind": "im_solid64", "arm": "q38max", "model": "qwen/qwen3.8-max-0902", "rep": 0, "reasoning": null, "img_bytes": 178, "ok": true, "ptok": 97, "rtok": 6}
+{"ts": "20260917-181131", "kind": "im_solid64", "arm": "q38flash", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": null, "img_bytes": 178, "ok": true, "ptok": 122, "rtok": 6}
+{"ts": "20260917-181131", "kind": "im_solid64", "arm": "q38flash_off", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": "{\"enabled\": false}", "img_bytes": 178, "ok": true, "ptok": 86, "rtok": 0}
+{"ts": "20260917-181131", "kind": "im_solid512", "arm": "union", "model": "stealth/union-alpha", "rep": 0, "reasoning": null, "img_bytes": 1880, "ok": true, "ptok": 366, "rtok": 0}
+{"ts": "20260917-181131", "kind": "im_solid512", "arm": "union", "model": "stealth/union-alpha", "rep": 1, "reasoning": null, "img_bytes": 1880, "ok": true, "ptok": 366, "rtok": 0}
+{"ts": "20260917-181131", "kind": "im_solid512", "arm": "glm", "model": "z-ai/glm-5.3-flash", "rep": 0, "reasoning": null, "img_bytes": 1880, "ok": true, "ptok": 383, "rtok": 4}
+{"ts": "20260917-181131", "kind": "im_solid512", "arm": "q38max", "model": "qwen/qwen3.8-max-0902", "rep": 0, "reasoning": null, "img_bytes": 1880, "ok": true, "ptok": 289, "rtok": 6}
+{"ts": "20260917-181131", "kind": "im_solid512", "arm": "q38flash", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": null, "img_bytes": 1880, "ok": true, "ptok": 314, "rtok": 6}
+{"ts": "20260917-181131", "kind": "im_solid512", "arm": "q38flash_off", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": "{\"enabled\": false}", "img_bytes": 1880, "ok": true, "ptok": 278, "rtok": 0}
+{"ts": "20260917-181131", "kind": "im_grad256", "arm": "union", "model": "stealth/union-alpha", "rep": 0, "reasoning": null, "img_bytes": 139325, "ok": true, "ptok": 105, "rtok": 0}
+{"ts": "20260917-181131", "kind": "im_grad256", "arm": "union", "model": "stealth/union-alpha", "rep": 1, "reasoning": null, "img_bytes": 139325, "ok": true, "ptok": 105, "rtok": 0}
+{"ts": "20260917-181131", "kind": "im_grad256", "arm": "glm", "model": "z-ai/glm-5.3-flash", "rep": 0, "reasoning": null, "img_bytes": 139325, "ok": true, "ptok": 122, "rtok": 3}
+{"ts": "20260917-181131", "kind": "im_grad256", "arm": "q38max", "model": "qwen/qwen3.8-max-0902", "rep": 0, "reasoning": null, "img_bytes": 139325, "ok": true, "ptok": 97, "rtok": 6}
+{"ts": "20260917-181131", "kind": "im_grad256", "arm": "q38flash", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": null, "img_bytes": 139325, "ok": true, "ptok": 122, "rtok": 6}
+{"ts": "20260917-181131", "kind": "im_grad256", "arm": "q38flash_off", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": "{\"enabled\": false}", "img_bytes": 139325, "ok": true, "ptok": 86, "rtok": 0}
+{"ts": "20260917-181131", "kind": "im_noise256", "arm": "union", "model": "stealth/union-alpha", "rep": 0, "reasoning": null, "img_bytes": 196992, "ok": true, "ptok": 105, "rtok": 0}
+{"ts": "20260917-181131", "kind": "im_noise256", "arm": "union", "model": "stealth/union-alpha", "rep": 1, "reasoning": null, "img_bytes": 196992, "ok": true, "ptok": 105, "rtok": 0}
+{"ts": "20260917-181131", "kind": "im_noise256", "arm": "glm", "model": "z-ai/glm-5.3-flash", "rep": 0, "reasoning": null, "img_bytes": 196992, "ok": true, "ptok": 122, "rtok": 4}
+{"ts": "20260917-181131", "kind": "im_noise256", "arm": "q38max", "model": "qwen/qwen3.8-max-0902", "rep": 0, "reasoning": null, "img_bytes": 196992, "ok": true, "ptok": 97, "rtok": 6}
+{"ts": "20260917-181131", "kind": "im_noise256", "arm": "q38flash", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": null, "img_bytes": 196992, "ok": true, "ptok": 122, "rtok": 6}
+{"ts": "20260917-181131", "kind": "im_noise256", "arm": "q38flash_off", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": "{\"enabled\": false}", "img_bytes": 196992, "ok": true, "ptok": 86, "rtok": 0}

@@ -1,0 +1,40 @@
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "union", "model": "stealth/union-alpha", "rep": 0, "reasoning": null, "ok": true, "ptok": 15, "rtok": 0}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "union", "model": "stealth/union-alpha", "rep": 1, "reasoning": null, "ok": true, "ptok": 15, "rtok": 0}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "union", "model": "stealth/union-alpha", "rep": 2, "reasoning": null, "ok": true, "ptok": 33, "rtok": 0}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "union", "model": "stealth/union-alpha", "rep": 3, "reasoning": null, "ok": true, "ptok": 33, "rtok": 0}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "union", "model": "stealth/union-alpha", "rep": 4, "reasoning": null, "ok": true, "ptok": 15, "rtok": 0}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "union", "model": "stealth/union-alpha", "rep": 5, "reasoning": null, "ok": true, "ptok": 15, "rtok": 0}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "union", "model": "stealth/union-alpha", "rep": 6, "reasoning": null, "ok": true, "ptok": 15, "rtok": 0}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "union", "model": "stealth/union-alpha", "rep": 7, "reasoning": null, "ok": true, "ptok": 33, "rtok": 0}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "union", "model": "stealth/union-alpha", "rep": 8, "reasoning": null, "ok": true, "ptok": 33, "rtok": 0}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "union", "model": "stealth/union-alpha", "rep": 9, "reasoning": null, "ok": true, "ptok": 15, "rtok": 0}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "glm", "model": "z-ai/glm-5.3-flash", "rep": 0, "reasoning": null, "ok": true, "ptok": 28, "rtok": 5}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "glm", "model": "z-ai/glm-5.3-flash", "rep": 1, "reasoning": null, "ok": true, "ptok": 28, "rtok": 6}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "q38flash", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": null, "ok": true, "ptok": 77, "rtok": 6}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "q38flash", "model": "qwen/qwen3.8-flash", "rep": 1, "reasoning": null, "ok": true, "ptok": 77, "rtok": 6}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "q38flash_off", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": "{\"enabled\": false}", "ok": true, "ptok": 41, "rtok": 0}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "q38flash_off", "model": "qwen/qwen3.8-flash", "rep": 1, "reasoning": "{\"enabled\": false}", "ok": true, "ptok": 41, "rtok": 0}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "q38max", "model": "qwen/qwen3.8-max-0902", "rep": 0, "reasoning": null, "ok": true, "ptok": 77, "rtok": 6}
+{"ts": "20260917-182900", "part": "census", "cond": "text", "arm": "q38max", "model": "qwen/qwen3.8-max-0902", "rep": 1, "reasoning": null, "ok": true, "ptok": 77, "rtok": 6}
+{"ts": "20260917-182900", "part": "paired", "cond": "no_img", "arm": "union", "model": "stealth/union-alpha", "rep": 0, "reasoning": null, "ok": true, "ptok": 9, "rtok": 0}
+{"ts": "20260917-182900", "part": "paired", "cond": "no_img", "arm": "union", "model": "stealth/union-alpha", "rep": 1, "reasoning": null, "ok": true, "ptok": 9, "rtok": 0}
+{"ts": "20260917-182900", "part": "paired", "cond": "no_img", "arm": "union", "model": "stealth/union-alpha", "rep": 2, "reasoning": null, "ok": true, "ptok": 9, "rtok": 0}
+{"ts": "20260917-182900", "part": "paired", "cond": "with_img", "arm": "union", "model": "stealth/union-alpha", "rep": 0, "reasoning": null, "ok": true, "ptok": 23, "rtok": 0}
+{"ts": "20260917-182900", "part": "paired", "cond": "with_img", "arm": "union", "model": "stealth/union-alpha", "rep": 1, "reasoning": null, "ok": true, "ptok": 23, "rtok": 0}
+{"ts": "20260917-182900", "part": "paired", "cond": "with_img", "arm": "union", "model": "stealth/union-alpha", "rep": 2, "reasoning": null, "ok": true, "ptok": 23, "rtok": 0}
+{"ts": "20260917-182900", "part": "paired", "cond": "no_img", "arm": "glm", "model": "z-ai/glm-5.3-flash", "rep": 0, "reasoning": null, "ok": true, "ptok": 22, "rtok": 7}
+{"ts": "20260917-182900", "part": "paired", "cond": "no_img", "arm": "glm", "model": "z-ai/glm-5.3-flash", "rep": 1, "reasoning": null, "ok": true, "ptok": 22, "rtok": 8}
+{"ts": "20260917-182900", "part": "paired", "cond": "with_img", "arm": "glm", "model": "z-ai/glm-5.3-flash", "rep": 0, "reasoning": null, "ok": true, "ptok": 40, "rtok": 6}
+{"ts": "20260917-182900", "part": "paired", "cond": "with_img", "arm": "glm", "model": "z-ai/glm-5.3-flash", "rep": 1, "reasoning": null, "ok": true, "ptok": 40, "rtok": 7}
+{"ts": "20260917-182900", "part": "paired", "cond": "no_img", "arm": "q38flash", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": null, "ok": true, "ptok": 71, "rtok": 5}
+{"ts": "20260917-182900", "part": "paired", "cond": "no_img", "arm": "q38flash", "model": "qwen/qwen3.8-flash", "rep": 1, "reasoning": null, "ok": true, "ptok": 71, "rtok": 6}
+{"ts": "20260917-182900", "part": "paired", "cond": "with_img", "arm": "q38flash", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": null, "ok": true, "ptok": 124, "rtok": 6}
+{"ts": "20260917-182900", "part": "paired", "cond": "with_img", "arm": "q38flash", "model": "qwen/qwen3.8-flash", "rep": 1, "reasoning": null, "ok": true, "ptok": 124, "rtok": 6}
+{"ts": "20260917-182900", "part": "paired", "cond": "no_img", "arm": "q38flash_off", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": "{\"enabled\": false}", "ok": true, "ptok": 35, "rtok": 0}
+{"ts": "20260917-182900", "part": "paired", "cond": "no_img", "arm": "q38flash_off", "model": "qwen/qwen3.8-flash", "rep": 1, "reasoning": "{\"enabled\": false}", "ok": true, "ptok": 35, "rtok": 0}
+{"ts": "20260917-182900", "part": "paired", "cond": "with_img", "arm": "q38flash_off", "model": "qwen/qwen3.8-flash", "rep": 0, "reasoning": "{\"enabled\": false}", "ok": true, "ptok": 88, "rtok": 0}
+{"ts": "20260917-182900", "part": "paired", "cond": "with_img", "arm": "q38flash_off", "model": "qwen/qwen3.8-flash", "rep": 1, "reasoning": "{\"enabled\": false}", "ok": true, "ptok": 88, "rtok": 0}
+{"ts": "20260917-182900", "part": "paired", "cond": "no_img", "arm": "q38max", "model": "qwen/qwen3.8-max-0902", "rep": 0, "reasoning": null, "ok": true, "ptok": 71, "rtok": 6}
+{"ts": "20260917-182900", "part": "paired", "cond": "no_img", "arm": "q38max", "model": "qwen/qwen3.8-max-0902", "rep": 1, "reasoning": null, "ok": true, "ptok": 71, "rtok": 6}
+{"ts": "20260917-182900", "part": "paired", "cond": "with_img", "arm": "q38max", "model": "qwen/qwen3.8-max-0902", "rep": 0, "reasoning": null, "ok": true, "ptok": 99, "rtok": 6}
+{"ts": "20260917-182900", "part": "paired", "cond": "with_img", "arm": "q38max", "model": "qwen/qwen3.8-max-0902", "rep": 1, "reasoning": null, "ok": true, "ptok": 99, "rtok": 6}

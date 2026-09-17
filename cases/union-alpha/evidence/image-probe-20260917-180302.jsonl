@@ -1,0 +1,12 @@
+{"ts": "20260917-180302", "kind": "text_only", "model": "stealth/union-alpha", "img_bytes": 0, "ok": true, "ptok": 25, "ctok": 6}
+{"ts": "20260917-180302", "kind": "text_only", "model": "z-ai/glm-5.3-flash", "img_bytes": 0, "ok": true, "ptok": 20, "ctok": 6}
+{"ts": "20260917-180302", "kind": "text_only", "model": "qwen/qwen3.8-max-0902", "img_bytes": 0, "ok": true, "ptok": 69, "ctok": 6}
+{"ts": "20260917-180302", "kind": "img_solid", "model": "stealth/union-alpha", "img_bytes": 178, "ok": true, "ptok": 21, "ctok": 6}
+{"ts": "20260917-180302", "kind": "img_solid", "model": "z-ai/glm-5.3-flash", "img_bytes": 178, "ok": true, "ptok": 38, "ctok": 6}
+{"ts": "20260917-180302", "kind": "img_solid", "model": "qwen/qwen3.8-max-0902", "img_bytes": 178, "ok": true, "ptok": 97, "ctok": 6}
+{"ts": "20260917-180302", "kind": "img_grad", "model": "stealth/union-alpha", "img_bytes": 139325, "ok": true, "ptok": 105, "ctok": 6}
+{"ts": "20260917-180302", "kind": "img_grad", "model": "z-ai/glm-5.3-flash", "img_bytes": 139325, "ok": true, "ptok": 122, "ctok": 6}
+{"ts": "20260917-180302", "kind": "img_grad", "model": "qwen/qwen3.8-max-0902", "img_bytes": 139325, "ok": true, "ptok": 97, "ctok": 6}
+{"ts": "20260917-180302", "kind": "img_noise", "model": "stealth/union-alpha", "img_bytes": 196992, "ok": true, "ptok": 105, "ctok": 6}
+{"ts": "20260917-180302", "kind": "img_noise", "model": "z-ai/glm-5.3-flash", "img_bytes": 196992, "ok": true, "ptok": 122, "ctok": 6}
+{"ts": "20260917-180302", "kind": "img_noise", "model": "qwen/qwen3.8-max-0902", "img_bytes": 196992, "ok": true, "ptok": 97, "ctok": 6}

@@ -82,3 +82,5 @@ Revealed as Qwen or Alibaba, the call was right. Revealed as anything else, the 
 ## Evidence
 
 One file per run, named for the run: `probe-union-*` (baseline probes), `catalog-union-*` and `catalog2-union-*` (candidate batches), `stability-union-*` (three rounds), `charset-union-*` (character sets), `qwen-cross-*` (family internals), `cutoff-recheck*`, `stage3-union-*` (behaviour), `reasoning-switch-*`, `qwen38flash-noreason-*` and `qwen38max-noreason-*` (controls), `ctx-sweep-*` (context), `xplat-go-*` (cross-platform), plus `stage0-stage1-20260917.md`.
+
+**Update (2026-09-17, evening).** Further measurement showed the endpoint reports class-dependent token counts (text path consistent with the Qwen family, image path consistent with GLM-5.3-Flash) and returns two distinct readings for identical text requests. See the update section in `README.md`. The call above is unchanged.

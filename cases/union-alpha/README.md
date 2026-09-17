@@ -41,3 +41,17 @@ If the reveal names Qwen or Alibaba, the tokenizer-family call was correct. If i
 ## Files
 
 `prediction-20260917.md` is the original working record. `prediction-20260917-en.md` is the English version. `evidence/` holds the raw measurement files, one per run, each carrying the timestamp of the run that produced it.
+
+## Update — 2026-09-17 (evening): class-dependent token accounting
+
+Two further measurement runs, archived in `evidence/`, were made after this case was published.
+
+**Image-bearing requests** (`image-expand-20260917-181131.jsonl`). The same prompt with an image attached gives a constant offset of −17 against GLM-5.3-Flash on all four image probes (64×64, 256×256 gradient, 256×256 noise, 512×512). The two endpoints also move identically with image size: union 21 → 366, GLM-5.3-Flash 38 → 383, both +345. Against the Qwen 3.8 line the image offsets are not constant: −76, +8, +77. The Qwen 3.8 Max and Flash lines do not scale the same way (97 → 289 and 122 → 314).
+
+**Paired text/image requests** (`mode-census-20260917-182900.jsonl`). The same carrier sent with and without an attached 64×64 image: union 9 → 23, GLM-5.3-Flash 22 → 40, so the class offset moves from −13 on text to −17 on image while staying constant inside each class. The image contributes 14 tokens on union and 18 on GLM-5.3-Flash. At 512×512 both endpoints gained 345 tokens over their own 64×64 reading, so the image tokens scale identically and the four-token gap is a fixed difference on the image path. The reference arms are stable to the token across repeated reads (77, 77, 41, 28).
+
+**Repeat reads of identical text requests** (`drift-recheck-20260917-174937.jsonl`, `mode-census-20260917-182900.jsonl`). The endpoint returns two distinct prompt-token values for the same request. In ten consecutive identical reads the values came in stretches: 15, 15, 33, 33, 15, 15, 15, 33, 33, 15, with six readings at the low value and four at the high one. The high value sits 18 tokens above the low one and does not match the Qwen-family offset. Text-path constants reproduce exactly at the low value: Qwen3.8 line −62, Qwen3.8-Flash with reasoning off −26, Qwen3.7-Max −11.
+
+**Reading.** The reported prompt-token count is not a single function of the input. Text-path counting is consistent with the Qwen family; image-path counting is consistent with GLM-5.3-Flash. The call above is unchanged and stays scoped to the text-path measurement, which reproduced on the day it was published, four hours after the thread went up.
+
+**Coverage correction.** The character-set probes were run on two of the six Qwen models, not all six. Every measured pair still held a constant offset; the scope of that sentence was wider than the measurement.
