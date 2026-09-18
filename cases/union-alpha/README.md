@@ -99,3 +99,17 @@ The paragraph above reports what a single reading per probe shows. Two further r
 **What is superseded.** The statement in the previous update that the text-path call "does not carry over to the successor deployment" applies to single readings only, and is superseded by the mode-resolved result above. Everything else in that update stands, including the one-token overnight drift of the reference arms and the point that a differential baseline belongs to a deployment period.
 
 `evidence/pareto-diagnostic-20260918-195248.jsonl` holds both runs (95 + 55 records; transport failures retried).
+
+## Update — 2026-09-18 (audit batch): the offsets are invariant, the occurrence rate is not
+
+A third batch was run with its decision rules fixed in advance (local file committed before the run, `ddbacfa`; restated below), to close two gaps: the earlier evidence stored only `prompt_tokens`, so a different upstream engine and a different reporting path were indistinguishable; and the family attribution rested on two same-family arms, all of them OpenRouter endpoints.
+
+Across the three measurement windows there are now **9 minority readings in 309 text reads (2.9%), and every one sits at the same offset**: −55 against qwen3.8-max, −4 against qwen3.7-max, and −46 against qwen3.8-27b (measured on four of them). The third arm was predicted before the run as −55 + g, where g is the same-window qwen3.8-max-to-27b gap; g measured 9 on all four probes, and the reading matched.
+
+**The occurrence rate is not stationary**: 0/23 (0%) in the first window, 6/90 (6.7%) in the second, 3/196 (1.5%) in the third. A single reading, or a handful, is very likely to miss the mode entirely, which is what happened in the first post-reveal run (23 reads, conclusion "not attributable").
+
+**Rules fixed before this batch.** (1) Forty consecutive reads each of two probes with the full raw response body and response headers stored, to test whether minority readings carry a distinguishable signature (provider, response id, usage fields, headers); (2) targeted replication on four probes with a third same-family arm; (3) deep samples of twenty reads on three probes.
+
+**Results.** (a) The 80 consecutive reads produced no minority reading at all, so the signature question stays **open** — from the evidence held, a different upstream engine and a different reporting path remain indistinguishable, and no claim is made either way. (b) The targeted replication caught one minority reading, and it matched all three arms exactly. (c) A direct Alibaba DashScope endpoint returns counts identical to the OpenRouter Qwen endpoints (11 of 11 comparable probes, difference 0), so the family reference does not depend on OpenRouter's plumbing. (d) The deep samples did not split the majority mode into additional values.
+
+`evidence/pareto-audit-20260918-201638.jsonl` holds the batch (196 Pareto text reads plus reference arms and the DashScope calls).
