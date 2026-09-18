@@ -55,3 +55,25 @@ Two further measurement runs, archived in `evidence/`, were made after this case
 **Reading.** The reported prompt-token count is not a single function of the input. Text-path counting is consistent with the Qwen family; image-path counting is consistent with GLM-5.3-Flash. The call above is unchanged and stays scoped to the text-path measurement, which reproduced on the day it was published, four hours after the thread went up.
 
 **Coverage correction.** The character-set probes were run on two of the six Qwen models, not all six. Every measured pair still held a constant offset; the scope of that sentence was wider than the measurement.
+
+## Update — 2026-09-18 (reveal, and a re-measurement on the successor endpoint)
+
+The stealth period ended. `stealth/union-alpha` now returns HTTP 404: "Thank you for participating in the Stealth Union Alpha testing period. This model was Unbiased's Pareto." OpenRouter's listing page states the model was "revealed to be Pareto by Unbiased", and the vendor describes Pareto 26.9 as "one model, several engines" and "not a router". The successor endpoint is `unbiased/pareto`, with the same 262,144-token context and 131,072 maximum output as the stealth listing; the raw 404 body is archived at `evidence/reveal-404-union-alpha-20260918.json`.
+
+**Re-measurement after the reveal** (`evidence/pareto-successor-20260918-193329.jsonl`, 78 records; every reference arm re-measured in the same run, failed transports retried)
+
+| Path | Before the reveal (`stealth/union-alpha`) | After the reveal (`unbiased/pareto`) |
+|---|---|---|
+| Image path, vs GLM-5.3-Flash | constant −17 (4/4 image probes) | constant **−10** (4/4 image probes) |
+| Image path, 64×64 → 512×512 response | both endpoints +345 | both endpoints **+345** |
+| Image path, vs the Qwen 3.8 line | not constant (−76, +8, +77) | not constant (−92, −8, −8, +61) |
+| Text path, vs the Qwen 3.8 line | constant −62 (5/5 probes) | **not constant** (−32, −37, −34, +11, −37) |
+| Text path, vs Qwen3.7-Max | constant −11 (5/5 probes) | not constant (+19, +14, +17, +62, +14) |
+| Text path, vs GLM-5.3-Flash | drifting (−14 to −11) | not constant (+12 to +52) |
+| Ten repeats of one text request | two values (15 / 33, offset +18) | one value (10/10 identical) |
+
+**What holds and what does not.** The image-path finding reproduces across the deployment change: the offset against GLM-5.3-Flash is constant again, and the two endpoints still move identically with image size (+345 each, 31 → 376 on Pareto and 41 → 386 on GLM-5.3-Flash). The text-path call does not reproduce on the production deployment: no tested reference arm yields a constant offset there, and the ten-repeat reading showed no second mode. The text-path call therefore stays scoped to the platform, endpoint and deployment period it was measured on. It reproduced on that deployment four hours after the thread went up; it does not carry over to the successor deployment.
+
+**A note on baselines.** The reference arms themselves moved by one token between the two days (GLM-5.3-Flash identity_en 28 → 27, Qwen3.8-Max and Qwen3.8-Flash 77 → 76, Qwen3.8-Flash with reasoning off 41 → 40), which is exactly why the same-day control arms are what make the comparison above meaningful. A differential baseline belongs to a deployment period, and the reveal is an observable deployment boundary.
+
+**Limitation.** The vendor describes Pareto as a composite of several models but does not name them, so the component identities behind either path remain unconfirmed; the two counting paths remain an observation, not a mechanism claim. The long-probe texts used in the 2026-09-17 run could not be recovered (the scripts are gone and the archived evidence stores counts only), so the cross-day comparison above uses the three short probes; every conclusion drawn here comes from same-run comparisons.
