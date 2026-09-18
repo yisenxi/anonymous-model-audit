@@ -77,3 +77,25 @@ The stealth period ended. `stealth/union-alpha` now returns HTTP 404: "Thank you
 **A note on baselines.** The reference arms themselves moved by one token between the two days (GLM-5.3-Flash identity_en 28 → 27, Qwen3.8-Max and Qwen3.8-Flash 77 → 76, Qwen3.8-Flash with reasoning off 41 → 40), which is exactly why the same-day control arms are what make the comparison above meaningful. A differential baseline belongs to a deployment period, and the reveal is an observable deployment boundary.
 
 **Limitation.** The vendor describes Pareto as a composite of several models but does not name them, so the component identities behind either path remain unconfirmed; the two counting paths remain an observation, not a mechanism claim. The long-probe texts used in the 2026-09-17 run could not be recovered (the scripts are gone and the archived evidence stores counts only), so the cross-day comparison above uses the three short probes; every conclusion drawn here comes from same-run comparisons.
+
+## Update — 2026-09-18 (later): mode-resolved re-measurement on the successor endpoint
+
+The paragraph above reports what a single reading per probe shows. Two further runs were made on the successor endpoint with the decision rules fixed in advance (written to a local file and committed before each run; rules restated below).
+
+**Design.** Fifteen probes: the five original probes, six new short probes, and a four-step length series built by padding one base sentence with a fixed filler. Six repeats per probe on `unbiased/pareto`; reference arms `qwen/qwen3.8-max`, `qwen/qwen3.8-flash`, `qwen/qwen3.7-max` and `z-ai/glm-5.3-flash` re-measured in the same window. Rules fixed before the run: (1) a probe whose six repeats contain two or more distinct values counts as multi-mode; (2) a delta counts as constant only if it is identical across every probe of the same length class; (3) a mode counts as family evidence only if it holds against two same-family reference arms at once, with that family's internal 51-token gap closing the arithmetic.
+
+**Result.**
+
+| Layer | Measurement | What a single reading would have concluded |
+|---|---|---|
+| Single readings | delta vs the Qwen 3.8 line spans 7 tokens across nine short probes; the length series is non-monotonic (32 → 44 → 41 → 116) | "text path not attributable", plus a contradictory length response |
+| Mode-resolved (k = 6 per probe) | minority readings (6 of 90 reads, ≈7%) give delta **exactly −55** against qwen3.8-max and **exactly −4** against qwen3.7-max, across six dissimilar probes, 0 deviation | "text path = Qwen-family tokenizer with a fixed wrapper offset" |
+| Family-closure check | the qwen3.7-to-qwen3.8 counting gap is a constant 51 tokens; −55 + 51 = **−4** | both reference arms close at once, which rules out a single-arm coincidence |
+| Image path (control) | delta vs GLM-5.3-Flash constant **−10**; the 64×64 → 512×512 response is +345 on both endpoints | image path reproduces across the deployment change |
+| Cross-deployment shift | text −62 → −55 and image −17 → −10, i.e. **both shift by +7** | the change sits in the wrapper (system prompt), not in the tokenizer |
+
+**Reading.** The text-path call holds on the successor deployment in a minority mode; the majority mode belongs to a different counting basis, whose delta varies with content (span 50). Single readings are not decisive on this endpoint, which is precisely the failure mode the protocol's repeat-read gate exists for. The non-monotonic length response is a mode-mixing artifact: in the majority mode the series is strictly monotonic (32 → 44 → 68 → 116).
+
+**What is superseded.** The statement in the previous update that the text-path call "does not carry over to the successor deployment" applies to single readings only, and is superseded by the mode-resolved result above. Everything else in that update stands, including the one-token overnight drift of the reference arms and the point that a differential baseline belongs to a deployment period.
+
+`evidence/pareto-diagnostic-20260918-195248.jsonl` holds both runs (95 + 55 records; transport failures retried).
