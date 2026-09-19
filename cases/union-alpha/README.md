@@ -160,3 +160,29 @@ The twelve: AkashML, Chutes, Cloudflare, CoreWeave, Darkbloom, DeepInfra, DekaLL
 **Honest limitation this batch adds.** The family-closure argument used a third arm that is an open-weight, multi-upstream model. Had the router sent that call to Phala, the third arm's arithmetic would have been off by 68 and would have looked like a failed family closure. The call on 9/18 happened to land on Reka, whose count satisfies that prediction, so the third-arm leg of the closure rests partly on routing luck. The two primary arms are closed models served by a single upstream each (30 of 30 calls on Alibaba), so the main closure is unaffected.
 
 `evidence/provider-probe-20260920-020852.jsonl` holds the batch (204 records, raw response bodies and headers included), the mechanical verdict is in `evidence/provider-probe-20260920-020852-analysis.md`, the analysis in `evidence/provider-probe-20260920-020852-analysis-final.md`, and the recomputed statistics in `evidence/provider-probe-20260920-stats.txt`.
+
+## Update — 2026-09-20 (later still): the upstream offset does not move with length
+
+A sixth batch, with its rules fixed in advance (local file committed before the run, `412d0d0`), tested how the previous batch's four counting groups should be read. A difference between two *tokenizers* grows with length; a fixed difference does not. The fifteen-probe panel, whose baseline readings run from 57 to 162 tokens, was therefore pinned to one upstream from each group — Phala (+68), Venice (+37), Alibaba (−4) and DeepInfra as the baseline — three repeats each.
+
+**Result: the offset does not move.** On all fifteen probes, and on every step of the length series, the differences are exactly **+68, +37 and −4**, with zero deviation. All sixty (probe × upstream) cells are identical across their three repeats, and the pin was honoured in **180 of 180** calls. Selected rows, with the baseline reading in brackets:
+
+| Probe | Phala | Venice | Alibaba | baseline |
+|---|---|---|---|---|
+| identity_zh (67) | 135 | 104 | 63 | 67 |
+| cutoff (61) | 129 | 98 | 57 | 61 |
+| long_zh (155) | 223 | 192 | 151 | 155 |
+| long_en (162) | 230 | 199 | 158 | 162 |
+| n3_en_math (68) | 136 | 105 | 64 | 68 |
+| L0_base (57) | 125 | 94 | 53 | 57 |
+| L1_pad2 (67) | 135 | 104 | 63 | 67 |
+| L2_pad6 (87) | 155 | 124 | 83 | 87 |
+| L3_pad14 (127) | 195 | 164 | 123 | 127 |
+
+**Reading.** The difference between upstreams is a fixed block, independent of length and of content: the same tokenizer with a different fixed wrapper per upstream, not different tokenizers. The prediction I wrote in advance — that the offset would grow with length, which would have meant a tokenizer difference and would have obliged me to reword the previous update — did not occur, and is reported here as not occurring.
+
+**The wider point, now with three layers.** A constant delta says "same tokenizer, a fixed difference" and nothing about *which layer* that difference belongs to. In this case constants of exactly that shape now appear at three layers: **+7** across the deployment change, **51** between two generations of one family, and **−4 / +37 / +68** across upstreams. It also validates on an independent layer the reasoning that carries the text-path call on the composite endpoint: the −55 offset was read as "same tokenizer with a fixed difference" precisely because it held across content-diverse probes, and here the same structure reproduces at the upstream layer across a 2.8× length span.
+
+**What changes and what does not.** The two primary reference arms are closed models, served by a single upstream each (30 of 30 calls on Alibaba), so the main family-closure result is unaffected. The third arm is the open-weight, multi-upstream model, and its reading on 9/18 happened to land on an upstream whose offset is zero; that leg of the closure therefore rests partly on routing luck, which the previous update flagged and this one quantifies. The four reference-arm requirements this batch adds: record the provider on every call, check that a reference arm has a single reading per probe before using it, prefer a closed single-upstream arm, and never attribute a change in an open-weight arm's count to the endpoint under test.
+
+`evidence/provider-length-20260920-022101.jsonl` holds the batch (180 records, raw bodies and headers included), with the mechanical verdict in `evidence/provider-length-20260920-022101-analysis.md` and the analysis in `evidence/provider-length-20260920-022101-analysis-final.md`.
