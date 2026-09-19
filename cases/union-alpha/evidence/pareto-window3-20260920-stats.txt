@@ -1,0 +1,35 @@
+W3 文件: evidence\pareto-window3-20260920-015406.jsonl
+总记录 150，成功 150，失败 0；Pareto 读数 90
+重试次数分布: {1: 143, 2: 7}
+provider 集合: {'Unbiased'}
+echo 集合: {'qwen/qwen3.8-flash', 'qwen/qwen3.8-max-0902', 'unbiased/pareto', 'qwen/qwen3.8-27b', 'qwen/qwen3.7-max'}
+响应头字段集合: {('content-type', 'date', 'server', 'x-content-type-options', 'x-generation-id')}
+
+=== 各窗口出现率（Wilson 95%）===
+successor 9/18 19:33    0/23   =  0.00%   Wilson 95% [-0.00, 14.31]%
+diagnostic 9/18 19:52   6/90   =  6.67%   Wilson 95% [3.09, 13.79]%
+audit 9/18 20:16        3/196  =  1.53%   Wilson 95% [0.52, 4.40]%
+window3 9/20 01:54      0/90   =  0.00%   Wilson 95% [0.00, 4.09]%
+合计                      9/399  =  2.26%   Wilson 95% [1.19, 4.23]%
+
+=== 两两 Fisher 精确检验（双侧）===
+successor 9/18 19:33   vs diagnostic 9/18 19:52  p = 0.3441  不显著
+successor 9/18 19:33   vs audit 9/18 20:16       p = 1.0000  不显著
+successor 9/18 19:33   vs window3 9/20 01:54     p = 1.0000  不显著
+diagnostic 9/18 19:52  vs audit 9/18 20:16       p = 0.0299  显著 (p<0.05)
+diagnostic 9/18 19:52  vs window3 9/20 01:54     p = 0.0287  显著 (p<0.05)
+audit 9/18 20:16       vs window3 9/20 01:54     p = 0.5542  不显著
+
+9/18 两窗合计 9/180 vs 本窗 0/90 → Fisher p = 0.0316 （显著）
+
+若把诊断窗率 6.7% 当作稳定概率，则 90 次全无命中的概率 = 0.0020
+若把审计窗率 1.5% 当作稳定概率，则 90 次全无命中的概率 = 0.2495
+
+=== 多数派读数逐项对比（本窗 vs 9/18）===
+全部 15 个探针: ✅ 逐项相同
+
+=== 本窗对照臂读数 ===
+q38max    {'identity_zh': 76, 'identity_en': 76, 'cutoff': 70, 'long_zh': 164, 'long_en': 171, 'n1_zh_short': 69, 'n2_zh_math': 74, 'n3_en_math': 77, 'n4_en_list': 69, 'n5_zh_code': 79, 'n6_en_place': 71, 'L0_base': 66, 'L1_pad2': 76, 'L2_pad6': 96, 'L3_pad14': 136}
+q37max    {'identity_zh': 25, 'identity_en': 25, 'cutoff': 19, 'long_zh': 113, 'long_en': 120, 'n1_zh_short': 18, 'n2_zh_math': 23, 'n3_en_math': 26, 'n4_en_list': 18, 'n5_zh_code': 28, 'n6_en_place': 20, 'L0_base': 15, 'L1_pad2': 25, 'L2_pad6': 45, 'L3_pad14': 85}
+q38flash  {'identity_zh': 76, 'identity_en': 76, 'cutoff': 70, 'long_zh': 164, 'long_en': 171, 'n1_zh_short': 69, 'n2_zh_math': 74, 'n3_en_math': 77, 'n4_en_list': 69, 'n5_zh_code': 79, 'n6_en_place': 71, 'L0_base': 66, 'L1_pad2': 76, 'L2_pad6': 96, 'L3_pad14': 136}
+q27b      {'identity_zh': 67, 'identity_en': 67, 'cutoff': 61, 'long_zh': 155, 'long_en': 162, 'n1_zh_short': 60, 'n2_zh_math': 65, 'n3_en_math': 136, 'n4_en_list': 60, 'n5_zh_code': 66, 'n6_en_place': 62, 'L0_base': 94, 'L1_pad2': 67, 'L2_pad6': 87, 'L3_pad14': 127}
