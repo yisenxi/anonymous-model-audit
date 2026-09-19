@@ -133,3 +133,30 @@ The occurrence rate across the four windows is now **0/23 (0%), 6/90 (6.7%), 3/1
 **Discipline and limitations.** The rules were fixed before the run; the negative result is published as such; per the pre-run rule the batch is final and no further probes were tried. The window is a single night-time run, four windows fall inside two days, and the reason the mode appears or does not is unknown and is not speculated on here.
 
 `evidence/pareto-window3-20260920-015406.jsonl` holds the batch (150 records: 90 Pareto reads plus four reference arms, each record carrying the raw response body and headers); `evidence/pareto-window3-20260920-015406-analysis.md` is the mechanical verdict, `evidence/pareto-window3-20260920-015406-analysis-final.md` the cross-window analysis, and `evidence/pareto-window3-20260920-stats.txt` the recomputed window rates and tests.
+
+## Update — 2026-09-20 (later): the reference arm's count is set by the serving upstream
+
+A fifth batch, with its rules fixed in advance (local file committed before the run, `a353f96`), tested the observation from the previous update directly: the same model id, the same prompt text, pinned to each upstream the platform currently lists for it, three repeats each.
+
+**Design.** `qwen/qwen3.8-27b` is an open-weight model, and the platform lists sixteen upstreams for it. Four probes (`n3_en_math`, `n5_zh_code`, `L0_base` and the control `identity_en`) × sixteen upstreams × three repeats, with the upstream pinned in the request (`provider.order` plus `allow_fallbacks: false`); the platform honoured the pin in **192 of 192** calls. Twelve further calls were made with no pin.
+
+**Result.** The sixteen upstreams fall into four counting groups, and each group's difference holds on every probe:
+
+| Probe | 12 upstreams | Alibaba, Novita | Venice | Phala |
+|---|---|---|---|---|
+| n3_en_math | 68 | 64 (−4) | 105 (+37) | **136 (+68)** |
+| n5_zh_code | 70 | 66 (−4) | 107 (+37) | **138 (+68)** |
+| L0_base | 57 | 53 (−4) | 94 (+37) | **125 (+68)** |
+| identity_en | 67 | 63 (−4) | 104 (+37) | **135 (+68)** |
+
+The twelve: AkashML, Chutes, Cloudflare, CoreWeave, Darkbloom, DeepInfra, DekaLLM, Io Net, Ionstream, Mancer 2, Parasail, Reka. All sixty-four (probe × upstream) cells are identical across their three repeats, so the arm is deterministic within an upstream. The offsets are constant per upstream across all four probes (+68, +37, −4, 0): the same tokenizer with a different fixed wrapper per upstream, not different tokenizers. Quantization does not line up with the groups — the twelve include fp4, bf16 and fp8 hardware, and the deviating groups include fp8 and unlabelled.
+
+**Two predictions failed, and both are reported as failed.** I had predicted that the control probe `identity_en` would read the same on every upstream, i.e. that the deviant readings were content-specific. It does not: all four probes split by upstream, so the earlier phrasing stands corrected — the upstream difference holds for every request to this arm, not for some content. I had also predicted that unpinned calls would land across at least two upstreams; three consecutive unpinned calls landed on a single one each time. That is a weakness of the design, but it produced the sharper illustration: unpinned, `L0_base` read **125** on Phala while twelve of the sixteen upstreams read **57**, so one unpinned reading came out **2.19×** the modal value.
+
+**The three deviant cells in the previous update are now closed.** `n3_en_math` read 136 on Phala, `n5_zh_code` read 66 on Novita and `L0_base` read 94 on Venice; each of those readings reproduces exactly when that upstream is pinned. The arm was not unstable — the router had simply sent those three calls to three different upstreams.
+
+**Reading.** A reference arm's count is a function of (model id, serving upstream, content), and this layer is invisible unless the provider field is recorded; this batch is the second time the fields added in the previous update have paid off, the first being the deviant cells themselves. The wider point concerns what a constant delta can establish: constancy says "same tokenizer, a fixed difference" and nothing about *which layer* that fixed difference belongs to. Three layers have now produced constants of exactly that shape in this case — **+7** across the deployment change, **51** between two model generations of the same family, and **−4 / +37 / +68** across upstreams. A delta rule therefore has to be bound to a controlled layer (same endpoint, same upstream, same window), or a constant will be booked to the wrong layer.
+
+**Honest limitation this batch adds.** The family-closure argument used a third arm that is an open-weight, multi-upstream model. Had the router sent that call to Phala, the third arm's arithmetic would have been off by 68 and would have looked like a failed family closure. The call on 9/18 happened to land on Reka, whose count satisfies that prediction, so the third-arm leg of the closure rests partly on routing luck. The two primary arms are closed models served by a single upstream each (30 of 30 calls on Alibaba), so the main closure is unaffected.
+
+`evidence/provider-probe-20260920-020852.jsonl` holds the batch (204 records, raw response bodies and headers included), the mechanical verdict is in `evidence/provider-probe-20260920-020852-analysis.md`, the analysis in `evidence/provider-probe-20260920-020852-analysis-final.md`, and the recomputed statistics in `evidence/provider-probe-20260920-stats.txt`.

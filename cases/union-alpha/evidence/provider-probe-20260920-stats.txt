@@ -1,0 +1,46 @@
+证据文件: evidence\provider-probe-20260920-020852.jsonl | 记录数 204
+定向组 192（成功 192），默认组 12
+PIN 未被遵守: 0
+重试分布: {1: 200, 3: 2, 2: 2}
+实付合计 $0.00873 | prompt tokens 合计 14730
+
+[齐性] (探针×上游) 单元 64 个，出现多值的: 0 → 全部单一值 ✅
+
+[分组] 每个探针：取值 → 上游清单（含与多数值的比）
+  n3_en_math:
+     值 64    上游  2 家    0.941×    -4  ['Alibaba', 'Novita']
+     值 68    上游 12 家       多数值        ['AkashML', 'Chutes', 'Cloudflare', 'CoreWeave', 'Darkbloom', 'DeepInfra', 'DekaLLM', 'Io Net', 'Ionstream', 'Mancer 2', 'Parasail', 'Reka']
+     值 105   上游  1 家    1.544×   +37  ['Venice']
+     值 136   上游  1 家    2.000×   +68  ['Phala']
+  n5_zh_code:
+     值 66    上游  2 家    0.943×    -4  ['Alibaba', 'Novita']
+     值 70    上游 12 家       多数值        ['AkashML', 'Chutes', 'Cloudflare', 'CoreWeave', 'Darkbloom', 'DeepInfra', 'DekaLLM', 'Io Net', 'Ionstream', 'Mancer 2', 'Parasail', 'Reka']
+     值 107   上游  1 家    1.529×   +37  ['Venice']
+     值 138   上游  1 家    1.971×   +68  ['Phala']
+  L0_base:
+     值 53    上游  2 家    0.930×    -4  ['Alibaba', 'Novita']
+     值 57    上游 12 家       多数值        ['AkashML', 'Chutes', 'Cloudflare', 'CoreWeave', 'Darkbloom', 'DeepInfra', 'DekaLLM', 'Io Net', 'Ionstream', 'Mancer 2', 'Parasail', 'Reka']
+     值 94    上游  1 家    1.649×   +37  ['Venice']
+     值 125   上游  1 家    2.193×   +68  ['Phala']
+  identity_en:
+     值 63    上游  2 家    0.940×    -4  ['Alibaba', 'Novita']
+     值 67    上游 12 家       多数值        ['AkashML', 'Chutes', 'Cloudflare', 'CoreWeave', 'Darkbloom', 'DeepInfra', 'DekaLLM', 'Io Net', 'Ionstream', 'Mancer 2', 'Parasail', 'Reka']
+     值 104   上游  1 家    1.552×   +37  ['Venice']
+     值 135   上游  1 家    2.015×   +68  ['Phala']
+
+[族] 逐探针检验 '−4 族' 与 '倍数族'
+  n3_en_math: 多数 68（12 家）| −4 族 ['Alibaba', 'Novita'] | 2× 族 ['Phala'] | 其他 {'Venice': (105, 1.544)}
+  n5_zh_code: 多数 70（12 家）| −4 族 ['Alibaba', 'Novita'] | 2× 族 [] | 其他 {'Phala': (138, 1.971), 'Venice': (107, 1.529)}
+  L0_base: 多数 57（12 家）| −4 族 ['Alibaba', 'Novita'] | 2× 族 [] | 其他 {'Phala': (125, 2.193), 'Venice': (94, 1.649)}
+  identity_en: 多数 67（12 家）| −4 族 ['Alibaba', 'Novita'] | 2× 族 [] | 其他 {'Phala': (135, 2.015), 'Venice': (104, 1.552)}
+
+[默认组] 不钉 provider 时的实际落点与读数
+  n3_en_math   68(DekaLLM), 68(DekaLLM), 68(DekaLLM)
+  n5_zh_code   70(Ionstream), 70(Ionstream), 70(Ionstream)
+  L0_base      125(Phala), 125(Phala), 125(Phala)
+  identity_en  67(Ionstream), 67(Ionstream), 67(Ionstream)
+
+[闭合] W3（9/20 01:54）三个偏离项的成因核对
+  W3 探针 n3_en_math   落在 Phala     读 136 | 本批钉 Phala     得 [136, 136, 136] | 多数值 68
+  W3 探针 n5_zh_code   落在 Novita    读 66 | 本批钉 Novita    得 [66, 66, 66] | 多数值 70
+  W3 探针 L0_base      落在 Venice    读 94 | 本批钉 Venice    得 [94, 94, 94] | 多数值 57
