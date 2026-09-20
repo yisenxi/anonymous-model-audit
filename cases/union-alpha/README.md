@@ -186,3 +186,15 @@ A sixth batch, with its rules fixed in advance (local file committed before the 
 **What changes and what does not.** The two primary reference arms are closed models, served by a single upstream each (30 of 30 calls on Alibaba), so the main family-closure result is unaffected. The third arm is the open-weight, multi-upstream model, and its reading on 9/18 happened to land on an upstream whose offset is zero; that leg of the closure therefore rests partly on routing luck, which the previous update flagged and this one quantifies. The four reference-arm requirements this batch adds: record the provider on every call, check that a reference arm has a single reading per probe before using it, prefer a closed single-upstream arm, and never attribute a change in an open-weight arm's count to the endpoint under test.
 
 `evidence/provider-length-20260920-022101.jsonl` holds the batch (180 records, raw bodies and headers included), with the mechanical verdict in `evidence/provider-length-20260920-022101-analysis.md` and the analysis in `evidence/provider-length-20260920-022101-analysis-final.md`.
+
+## Update — 2026-09-20 (second window, about 7.5 hours later): the upstream offsets are unchanged
+
+A seventh batch re-pinned the four upstreams — one from each counting group — over three probes (`identity_en`, `L0_base`, `long_zh`) at 09:53, about 7.5 hours after the batch at 02:21, with its rules fixed in advance (`1bbf285`).
+
+**Result: nothing moved.** The offsets are **+68 / +37 / −4** on all three probes; the baseline readings are **67 / 57 / 155**, exactly as in the first window; all twelve (probe × upstream) cells are identical across their repeats; and 36 of 36 calls were served by the upstream that was requested.
+
+One process note, because it belongs in the record: the first attempt at this batch was cut off at 28 of 36 calls by a tooling timeout — an infrastructure event, not a measurement outcome. The eight missing cells were measured later in the same window under the same rules, and the batch is reported with that fact attached rather than quietly completed.
+
+**Reading.** The per-upstream offsets are stable across two windows about 7.5 hours apart on the same day. Cross-day stability remains untested, so the previous update's limitation is narrowed rather than withdrawn.
+
+`evidence/provider-window2-20260920-095344.jsonl` holds the batch (36 records, raw bodies and headers included) with the verdict in `evidence/provider-window2-20260920-095344-analysis.md`.
